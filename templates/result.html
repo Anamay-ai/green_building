@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>Prediction Result</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #d0f0c0, #b2fab4);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #2e7d32;
+      padding-top: 60px;
+    }
+    .result-box {
+      margin: auto;
+      padding: 40px;
+      background: white;
+      width: 50%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    h2 {
+      font-size: 26px;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    {% if prediction == 1 %}
+      <h2>✅ High Likelihood of GRS Adoption</h2>
+      <p>Based on your responses, there is a <strong>{{ probability }}%</strong> chance of adopting Green Rating Systems.</p>
+    {% else %}
+      <h2>⚠️ Low Likelihood of GRS Adoption</h2>
+      <p>Your predicted adoption likelihood is <strong>{{ probability }}%</strong>. Consider enhancing training and awareness initiatives.</p>
+    {% endif %}
+    <p><a href="/">Go to Home</a></p>
+  </div>
+</body>
+</html>
